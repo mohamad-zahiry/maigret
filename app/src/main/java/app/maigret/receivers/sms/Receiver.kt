@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SmsReceiver : BroadcastReceiver() {
-
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Telephony.Sms.Intents.SMS_RECEIVED_ACTION) {
             // Extract new sms list from Intent

@@ -23,8 +23,7 @@ class LoginSignupActivity : AppCompatActivity() {
         Manifest.permission.READ_SMS,
         Manifest.permission.RECEIVE_SMS,
         Manifest.permission.INTERNET,
-//        Manifest.permission.BROADCAST_SMS,
-//        Manifest.permission.FOREGROUND_SERVICE,
+        Manifest.permission.READ_CONTACTS,
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

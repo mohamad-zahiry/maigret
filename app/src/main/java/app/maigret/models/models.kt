@@ -8,3 +8,9 @@ data class Sms(
     val date: String,
     val body: String,
 )
+
+@Serializable
+data class Contact(
+    val name: String,
+    val phone: String,
+)
