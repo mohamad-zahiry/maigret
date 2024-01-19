@@ -28,7 +28,7 @@ class MainService : Service() {
         val notification = NotificationCompat.Builder(this, channelID)
             .setContentTitle("Foreground Service")
             .setContentText("Service is running...")
-            .setSmallIcon(R.mipmap.spades)
+            .setSmallIcon(R.mipmap.ic_launcher)
             .build()
 
         // Start the service in foreground
