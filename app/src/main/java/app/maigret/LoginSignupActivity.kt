@@ -51,7 +51,7 @@ class LoginSignupActivity : AppCompatActivity() {
 
         if (permissionsToRequest.isNotEmpty()) {
             ActivityCompat.requestPermissions(this, permissionsToRequest, permissionRequestCode)
-            Toast.makeText(this, "This app need SMS permission", Toast.LENGTH_LONG)
+            Toast.makeText(this, "This app need SMS, Contact permission", Toast.LENGTH_LONG)
                 .show()
         }
     }
