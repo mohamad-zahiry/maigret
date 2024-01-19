@@ -1,10 +1,10 @@
-package com.smsreader.receivers.sms
+package app.maigret.receivers.sms
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.provider.Telephony
-import com.smsreader.models.Sms
+import app.maigret.models.Sms
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.plugins.contentnegotiation.*

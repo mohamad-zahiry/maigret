@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SMS Reader"
+rootProject.name = "Maigret"
 include(":app")

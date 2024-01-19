@@ -1,4 +1,4 @@
-package com.smsreader.models
+package app.maigret.models
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.smsreader.services
+package app.maigret.services
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,9 +10,8 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.smsreader.R
-import com.smsreader.receivers.sms.SmsReceiver
-
+import app.maigret.R
+import app.maigret.receivers.sms.SmsReceiver
 
 class MainService : Service() {
     private val smsReceiver = SmsReceiver()

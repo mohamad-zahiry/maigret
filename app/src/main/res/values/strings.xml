@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SMS Reader</string>
+    <string name="app_name">Maigret</string>
     <string name="signup">signup</string>
     <string name="next">next</string>
     <string name="phone_hint">+98 987 XXX XXXX</string>

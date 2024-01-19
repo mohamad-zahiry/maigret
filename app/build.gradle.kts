@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.smsreader"
+    namespace = "app.maigret"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.smsreader"
+        applicationId = "app.maigret"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.smsreader
+package app.maigret
 
 import android.Manifest
 import android.content.Intent
@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.smsreader.enums.CurrentLayout
-import com.smsreader.receivers.sms.SmsReceiver
-import com.smsreader.services.MainService
+import app.maigret.enums.CurrentLayout
+import app.maigret.receivers.sms.SmsReceiver
+import app.maigret.services.MainService
 
 class LoginSignupActivity : AppCompatActivity() {
     private var currentPage: CurrentLayout = CurrentLayout.LOGIN

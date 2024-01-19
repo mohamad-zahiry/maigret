@@ -1,4 +1,4 @@
-package com.smsreader.enums
+package app.maigret.enums
 
 enum class CurrentLayout {
     LOGIN,

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="app.maigret">
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -24,7 +25,9 @@
         android:theme="@style/Theme.SMSReader"
         tools:targetApi="31">
 
-        <service android:name=".services.MainService" android:foregroundServiceType="shortService"/>
+        <service
+            android:name=".services.MainService"
+            android:foregroundServiceType="shortService" />
 
         <receiver
             android:name=".receivers.sms.SmsReceiver"
