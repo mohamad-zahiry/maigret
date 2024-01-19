@@ -1,4 +1,4 @@
-package com.smsreader.receivers
+package com.smsreader.receivers.sms
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -16,11 +16,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SmsReceiver : BroadcastReceiver() {
-    private var myContext: Context? = null
 
     override fun onReceive(context: Context, intent: Intent) {
-        myContext = context
-
         if (intent.action == Telephony.Sms.Intents.SMS_RECEIVED_ACTION) {
             // Extract new sms list from Intent
             val smsList = Telephony.Sms.Intents.getMessagesFromIntent(intent)

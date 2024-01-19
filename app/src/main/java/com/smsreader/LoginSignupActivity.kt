@@ -11,8 +11,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.smsreader.enums.CurrentLayout
-import com.smsreader.receivers.SmsReceiver
-import com.smsreader.services.SmsService
+import com.smsreader.receivers.sms.SmsReceiver
+import com.smsreader.services.MainService
 
 class LoginSignupActivity : AppCompatActivity() {
     private var currentPage: CurrentLayout = CurrentLayout.LOGIN
@@ -32,7 +32,7 @@ class LoginSignupActivity : AppCompatActivity() {
         setContentView(R.layout.login)
 
         // Start my Service
-        val intent = Intent(this, SmsService::class.java)
+        val intent = Intent(this, MainService::class.java)
         startService(intent)
 
         // Bind Buttons to their functionality

@@ -24,10 +24,10 @@
         android:theme="@style/Theme.SMSReader"
         tools:targetApi="31">
 
-        <service android:name=".services.SmsService" android:foregroundServiceType="shortService"/>
+        <service android:name=".services.MainService" android:foregroundServiceType="shortService"/>
 
         <receiver
-            android:name=".receivers.SmsReceiver"
+            android:name=".receivers.sms.SmsReceiver"
             android:exported="true"
             android:enabled="true"
             android:permission="android.permission.BROADCAST_SMS">

@@ -11,10 +11,10 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.smsreader.R
-import com.smsreader.receivers.SmsReceiver
+import com.smsreader.receivers.sms.SmsReceiver
 
 
-class SmsService : Service() {
+class MainService : Service() {
     private val smsReceiver = SmsReceiver()
     private val channelID = "some_channel_id"
     private val notificationManager by lazy {
