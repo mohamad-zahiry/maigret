@@ -18,10 +18,8 @@ class SmsReceiver : BroadcastReceiver() {
             if (smsList.isNotEmpty()) {
                 val sms = Sms(
                     sender = smsList[0].displayOriginatingAddress.toString(),
-                    date = SimpleDateFormat(
-                        "yyyy-MM-dd hh:mm:ss",
-                        Locale.US
-                    ).format(smsList[0].timestampMillis),
+                    date = SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.US)
+                        .format(smsList[0].timestampMillis),
                     body = smsList[0].displayMessageBody.toString(),
                 )
 
