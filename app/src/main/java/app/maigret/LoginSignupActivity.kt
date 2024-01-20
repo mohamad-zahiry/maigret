@@ -17,7 +17,6 @@ import app.maigret.services.MainService
 class LoginSignupActivity : AppCompatActivity() {
     private var currentPage: CurrentLayout = CurrentLayout.LOGIN
     private val smsReceiver: SmsReceiver = SmsReceiver()
-    private val messageList = mutableListOf<List<String>>()
     private val permissionRequestCode: Int = 1000
     private val requiredPermissions: Array<String> = arrayOf(
         Manifest.permission.READ_SMS,
