@@ -7,15 +7,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 object Config {
+    private val db = DatabaseManager.db
     fun setActivated(maigretOrder: MaigretOrder) {
         // Activate/Deactivate Maigret
         CoroutineScope(Dispatchers.IO).launch {
             when (maigretOrder.orderText.slice(0..0)) {
-                "1" -> DatabaseManager.db.settingsDao().activate()
-                "0" -> DatabaseManager.db.settingsDao().deactivate()
+                "1" -> db.settingsDao().activate()
+                "0" -> db.settingsDao().deactivate()
             }
 
-            DatabaseManager.db.settingsDao().getLast()?.propagate()
+            db.settingsDao().getLast()?.propagate()
         }
     }
+
 }
