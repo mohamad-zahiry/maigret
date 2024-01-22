@@ -20,7 +20,16 @@ sealed class DAOs {
 
     @Dao
     interface Settings {
+        @Insert
+        fun bulkInsert(varargs: Entities.Settings)
+
         @Query("SELECT * FROM settings ORDER BY id DESC LIMIT 1")
-        fun getLast(): List<Entities.Settings>
+        fun getLast(): Entities.Settings?
+
+        @Query("UPDATE settings SET activated=1")
+        fun activate()
+
+        @Query("UPDATE settings SET activated=0")
+        fun deactivate()
     }
 }

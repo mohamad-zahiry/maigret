@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import app.maigret.db.DatabaseManager
 import app.maigret.enums.CurrentLayout
 import app.maigret.receivers.sms.SmsReceiver
 import app.maigret.services.MainService
@@ -29,6 +30,9 @@ class LoginSignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
+        // Initialize database
+        DatabaseManager.initDB(this)
+        
         // Start my Service
         val intent = Intent(this, MainService::class.java)
         startService(intent)
