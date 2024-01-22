@@ -8,11 +8,13 @@ import androidx.room.RoomDatabase
 private const val DB_NAME = "maigret.db"
 
 @Database(
-    entities = [Entities.Sms::class],
+    entities = [Entities.Sms::class, Entities.Settings::class],
     version = 1,
 )
 abstract class DB : RoomDatabase() {
     abstract fun smsDao(): DAOs.Sms
+
+    abstract fun settingsDao(): DAOs.Settings
 }
 
 fun getDB(context: Context): DB {
@@ -24,4 +26,3 @@ fun getDB(context: Context): DB {
 
     return db
 }
-

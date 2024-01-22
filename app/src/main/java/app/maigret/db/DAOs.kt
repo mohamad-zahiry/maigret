@@ -17,4 +17,10 @@ sealed class DAOs {
         @Delete
         fun delete(sms: Entities.Sms)
     }
+
+    @Dao
+    interface Settings {
+        @Query("SELECT * FROM settings ORDER BY id DESC LIMIT 1")
+        fun getLast(): List<Entities.Settings>
+    }
 }

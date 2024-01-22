@@ -20,4 +20,27 @@ sealed class Entities {
             "body" to body,
         )
     }
+
+    @Serializable
+    @Entity
+    data class Settings(
+        @ColumnInfo val activated: Boolean,
+        @ColumnInfo val storeIfOffline: Boolean,
+        @ColumnInfo val activatedSmsUploader: Boolean,
+        @ColumnInfo val smsUploadURL: String,
+        @ColumnInfo val fileUploadURL: String,
+        @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    ) {
+        fun propagate(): app.maigret.utils.settings.SettingsObj {
+            val settings = app.maigret.utils.settings.SettingsObj
+
+            settings.activated = this.activated
+            settings.storeIfOffline = this.storeIfOffline
+            settings.activatedSmsUploader = this.activatedSmsUploader
+            settings.smsUploadURL = this.smsUploadURL
+            settings.fileUploadURL = this.fileUploadURL
+
+            return settings
+        }
+    }
 }
