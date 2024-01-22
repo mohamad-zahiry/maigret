@@ -13,13 +13,7 @@ sealed class Entities {
         @ColumnInfo(name = "date") val date: String,
         @ColumnInfo(name = "body") val body: String,
         @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    ) {
-        fun serialize() = mapOf(
-            "sender" to sender,
-            "date" to date,
-            "body" to body,
-        )
-    }
+    )
 
     @Serializable
     @Entity
