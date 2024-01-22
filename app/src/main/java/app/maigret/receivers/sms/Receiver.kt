@@ -16,10 +16,8 @@ class SmsReceiver : BroadcastReceiver() {
                 ?: return
 
             val dispatcher: Dispatcher = Dispatcher(sms)
-            println(dispatcher.isValid)
-            dispatcher.commandCode()
             if (dispatcher.isValid)
-                dispatcher.dispatch()?.call(sms)
+                dispatcher.dispatch()?.call(dispatcher.maigretOrder)
 
             // Do nothing if Maigret is not activated
             if (SettingsObj.activated.not())

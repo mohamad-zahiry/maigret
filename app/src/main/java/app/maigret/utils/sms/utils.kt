@@ -3,6 +3,7 @@ package app.maigret.utils.sms
 import android.content.Intent
 import android.provider.Telephony
 import app.maigret.db.Entities
+import app.maigret.enums.CommandCode
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,3 +20,8 @@ fun intentToSms(intent: Intent): Entities.Sms? {
 
     return null
 }
+
+data class MaigretOrder(
+    val commandCode: CommandCode,
+    val orderText: String,
+)
