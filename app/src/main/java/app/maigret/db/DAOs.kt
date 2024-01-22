@@ -1,9 +1,6 @@
 package app.maigret.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 sealed class DAOs {
     @Dao
@@ -31,5 +28,8 @@ sealed class DAOs {
 
         @Query("UPDATE settings SET activated=0")
         fun deactivate()
+
+        @Update
+        fun update(settings: Entities.Settings)
     }
 }
