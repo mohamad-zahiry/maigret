@@ -33,6 +33,7 @@ android {
 }
 
 val ktorVersion = "2.3.7"
+val roomVersion = "2.6.1"
 
 dependencies {
     // Ktor Client
@@ -41,6 +42,15 @@ dependencies {
     // Ktor Serializer (JSON)
     implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    // Room Persistence Library (SQLite ORM)
+    implementation("androidx.room:room-runtime:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+    // (Optional) for Room
+    implementation("androidx.room:room-ktx:$roomVersion") // Kotlin Extensions and Coroutines support
+    implementation("androidx.room:room-rxjava2:$roomVersion") // RxJava2 support
+    implementation("androidx.room:room-rxjava3:$roomVersion") // RxJava3 support
+    implementation("androidx.room:room-guava:$roomVersion") // Guava support, including Optional and ListenableFuture
+    implementation("androidx.room:room-paging:$roomVersion") // Paging 3 Integration
     // Other
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
