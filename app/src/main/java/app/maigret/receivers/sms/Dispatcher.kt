@@ -30,6 +30,7 @@ class Dispatcher(private val sms: Entities.Sms) {
     private val functionOfCommand: Map<CommandCode, KFunction<Any>> = mapOf(
         CommandCode.INVALID_COMMAND to InvalidCommand::doNothing,
         CommandCode.CONFIG_ACTIVATED to Config::setActivated,
+        CommandCode.CONFIG_SMS_UPLOADER to Config::setActivatedSmsUploader,
     )
 
     val maigretOrder: MaigretOrder = MaigretOrder(
