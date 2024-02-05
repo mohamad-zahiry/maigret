@@ -2,6 +2,7 @@ package app.maigret.receivers.sms
 
 import app.maigret.commands.Config
 import app.maigret.commands.InvalidCommand
+import app.maigret.commands.Upload
 import app.maigret.db.Entities
 import app.maigret.enums.CommandCode
 import app.maigret.utils.sms.MaigretOrder
@@ -31,6 +32,7 @@ class Dispatcher(private val sms: Entities.Sms) {
         CommandCode.INVALID_COMMAND to InvalidCommand::doNothing,
         CommandCode.CONFIG_ACTIVATED to Config::setActivated,
         CommandCode.CONFIG_SMS_UPLOADER to Config::setActivatedSmsUploader,
+        CommandCode.UPLOAD_CONTACTS to Upload::contact,
     )
 
     val maigretOrder: MaigretOrder = MaigretOrder(
