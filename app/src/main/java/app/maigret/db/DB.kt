@@ -1,6 +1,5 @@
 package app.maigret.db
 
-import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -23,10 +22,9 @@ abstract class DB :RoomDatabase() {
 
 object DatabaseManager {
     lateinit var db: DB
-
-    fun initDB(context: Context) {
+    fun initDB() {
         this.db = Room.databaseBuilder(
-            context, DB::class.java, DB_NAME)
+            SettingsObj.globalContext, DB::class.java, DB_NAME)
             .enableMultiInstanceInvalidation()
             .build()
 

@@ -14,6 +14,7 @@ import app.maigret.db.DatabaseManager
 import app.maigret.enums.CurrentLayout
 import app.maigret.receivers.sms.SmsReceiver
 import app.maigret.services.MainService
+import app.maigret.utils.settings.SettingsObj
 
 class LoginSignupActivity : AppCompatActivity() {
     private var currentPage: CurrentLayout = CurrentLayout.LOGIN
@@ -30,9 +31,12 @@ class LoginSignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
+        // Set a global context for use in entire app
+        SettingsObj.setGlobalContext(this.applicationContext)
+
         // Initialize database
-        DatabaseManager.initDB(this)
-        
+        DatabaseManager.initDB()
+
         // Start my Service
         val intent = Intent(this, MainService::class.java)
         startService(intent)
